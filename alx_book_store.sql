@@ -5,30 +5,30 @@ CREATE TABLE Authors (
    author_name VARCHAR(215)
 );
 CREATE TABLE Books (
-    BOOK_ID INT PRIMARY KEY,
-    TITLE VARCHAR(130),
+    book_id INT PRIMARY KEY,
+    title VARCHAR(130),
     author_id INT,
-    PRICE DOUBLE ,
+    price DOUBLE ,
     publication_date DATE,
     FOREIGN KEY (author_id) REFERENCES Authors(author_id)
 );
 CREATE TABLE Customers (
-   Customer_ID INT PRIMARY KEY,
-   CUSTOMER_NAME VARCHAR(215),
-   EMAIL VARCHAR(215),
+   customer_id INT PRIMARY KEY,
+   customer_name VARCHAR(215),
+   email VARCHAR(215),
    ADDRESS TEXT
 );
 CREATE TABLE Orders (
-   ORDER_ID INT PRIMARY KEY,
+   order_id INT PRIMARY KEY,
    Customer_ID INT,
-   ORDER_DATE DATE,
+   order_date DATE,
    FOREIGN KEY (Customer_ID) REFERENCES Customers(Customer_ID)
 );
 CREATE TABLE Order_Details (
    orderdetailid  INT PRIMARY KEY,
-   ORDER_ID INT,
-   BOOK_ID INT,
-   QUANTITY DOUBLE,
-   FOREIGN KEY (ORDER_ID) REFERENCES Orders(ORDER_ID),
-   FOREIGN KEY (BOOK_ID) REFERENCES Books(BOOK_ID)
+   order_id INT,
+   book_id INT,
+   quantity DOUBLE,
+   FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+   FOREIGN KEY (book_id) REFERENCES Books(book_id)
 );
