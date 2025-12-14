@@ -20,9 +20,9 @@ CREATE TABLE Customers (
 );
 CREATE TABLE Orders (
    order_id INT PRIMARY KEY,
-   Customer_ID INT,
+   customer_id INT,
    order_date DATE,
-   FOREIGN KEY (Customer_ID) REFERENCES Customers(Customer_ID)
+   FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 CREATE TABLE Order_Details (
    orderdetailid  INT PRIMARY KEY,
