@@ -1,9 +1,10 @@
 import mysql.connector
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="kedwani-11566",
-)   
+try:
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="kedwani-11566",
+    )
 except mysql.connector.Error as err:
     print(f"Error: {err}")
 
